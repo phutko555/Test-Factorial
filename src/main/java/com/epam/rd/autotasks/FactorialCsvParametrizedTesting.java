@@ -1,7 +1,9 @@
+// FactorialCsvParametrizedTesting.java
 package com.epam.rd.autotasks;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FactorialCsvParametrizedTesting {
 
@@ -9,7 +11,7 @@ class FactorialCsvParametrizedTesting {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/csvCases.csv")
-    void testFactorial(String input, String output){
-
+    void testFactorial(String input, String output) {
+        assertEquals(output, factorial.factorial(input));
     }
 }
